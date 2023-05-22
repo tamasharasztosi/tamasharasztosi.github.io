@@ -12,9 +12,9 @@ var latitudeDisplay = document.querySelector('#gps_lat');
 
 
 // Register bluetooth data sources, connect to parsers and display elements
-registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_fakebat, windSpeedDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 'temperature', blehandle_faketemp, windDirectionDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 'humidity', blehandle_fakedia, longitudeDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_sint8, windSpeedDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1111, blehandle_sint8, windDirectionDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1112', blehandle_sint8, longitudeDisplay, '')
 
 
 // Utility functions
@@ -84,21 +84,3 @@ function blehandle_double(event, TargetSelector, DataLog) {
   console.log('DouReceived: ' + value);
   TargetSelector.textContent = String(value.toFixed(6)) ;
 }
-
-function blehandle_fakebat(event, TargetSelector, DataLog) {
-  const value = 98;
-  //console.log('Int8Received: ' + value);
-  TargetSelector.textContent = String(value) ;
-} 
-
-function blehandle_faketemp(event, TargetSelector, DataLog) {
-  const value = 23;
-  //console.log('Int8Received: ' + value);
-  TargetSelector.textContent = String(value) ;
-} 
-
-function blehandle_fakedia(event, TargetSelector, DataLog) {
-  const value = 599.25;
-  //console.log('Int8Received: ' + value);
-  TargetSelector.textContent = String(value) ;
-} 
