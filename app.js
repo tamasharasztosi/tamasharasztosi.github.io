@@ -5,15 +5,15 @@ var BluetoothDevices = [];
 var ConnectSourceButton = document.querySelector('#connect_button');
 
 // configure the display
-var windSpeedDisplay = document.querySelector('#wind_speed');
-var windDirectionDisplay = document.querySelector('#wind_direction');
+var batteryDisplay = document.querySelector('#battery_level');
+var windDirectionDisplay = document.querySelector('#temperature');
 var longitudeDisplay = document.querySelector('#gps_lon');
 var latitudeDisplay = document.querySelector('#gps_lat');
 
 
 // Register bluetooth data sources, connect to parsers and display elements
-registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_sint8, windSpeedDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1111, blehandle_sint16, windDirectionDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_sint8, batteryDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1111, blehandle_sint16, temperatureDisplay, '')
 registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1112, blehandle_double, longitudeDisplay, '')
 
 
