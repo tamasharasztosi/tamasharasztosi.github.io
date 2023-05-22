@@ -13,7 +13,7 @@ var diameterDisplay = document.querySelector('#dia');
 
 // Register bluetooth data sources, connect to parsers and display elements
 registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_sint8, batteryDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x2A6E, blehandle_sint16, temperatureDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x2A6E, blehandle_double, temperatureDisplay, '')
 registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1112, blehandle_double, diameterDisplay, '')
 
 
