@@ -13,15 +13,22 @@
 <div id="status" class="container text-center">
 
     <div class="row summary_box" style="height: 60px;">
-        <div class="col">Logging status:
-            <span id="logging_status">Paused</span>
+        <div class="col">Mérési státusz:
+            <span id="logging_status">Megállítva</span>
         </div>
-        <div class="col">Last observation:
+        <div class="col">Utolsó mérés:
             <span class="col" id="last_obs_time">xx:xx:xx</span>
         </div>
 
     </div>
     <div class="row">
+        <div class="col summary_box" >
+            <div class="row"><div class="metric_title"> Akkumulátor </div> </div>
+            <div class="row metric_value" >
+                <span id="wind_speed" > XX</span>
+                <span class="units">%</span>  </div>
+        </div>
+    </div>
         <div class="col summary_box" >
             <div class="row"><div class="metric_title"> Kerékátmérő </div> </div>
             <div class="row metric_value" >
@@ -29,12 +36,10 @@
                 <span class="units">mm</span>  </div>
         </div>
     </div>
-        
-    </div>
 </div>
 <div class="navbar fixed-bottom bg-light">
-    <div id="connect_button" class="button col" role="button">Connect</div>
-    <div id="start_stop_logging_button" class="button col" role="button">Start Logging</div>
+    <div id="connect_button" class="button col" role="button">Kapcsolódás</div>
+    <div id="start_stop_logging_button" class="button col" role="button">Mentés</div>
 </div>
 
 </body>
