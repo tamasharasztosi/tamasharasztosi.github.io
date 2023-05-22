@@ -13,45 +13,45 @@
 <div id="status" class="container text-center">
 
     <div class="row summary_box" style="height: 60px;">
-        <div class="col">Mérési státusz:
-            <span id="logging_status">Megállítva</span>
+        <div class="col">State:
+            <span id="logging_status">Connected</span>
         </div>
-        <div class="col">Utolsó mérés:
-            <span class="col" id="last_obs_time">hh:mm:ss</span>
+        <div class="col">Last measurement:
+            <span class="col" id="last_obs_time">14:35:20</span>
         </div>
 
     </div>
     <div class="row">
         <div class="col summary_box" >
-            <div class="row"><div class="metric_title"> Akkumulátor </div> </div>
+            <div class="row"><div class="metric_title"> Diameter </div> </div>
             <div class="row metric_value" >
-                <span id="wind_speed" > - </span>
-                <span class="units">%</span>  </div>
+                <span id="gps_lon" > - </span>
+                <span class="units">mm</span>  </div>
         </div>
 
    </div>
         <div class="row">
         <div class="col summary_box" >
-            <div class="row"><div class="metric_title"> Hőmérséklet </div> </div>
+            <div class="row"><div class="metric_title"> Temperature </div> </div>
             <div class="row metric_value" >
-                <span id="wind_direction" > - </span>
+                <span id="wind_direction" > 23 </span>
                 <span class="units">°C</span>  </div>
         </div>
 
     </div>
         <div class="row">
         <div class="col summary_box" >
-            <div class="row"><div class="metric_title"> Kerékátmérő </div> </div>
+            <div class="row"><div class="metric_title"> Battery </div> </div>
             <div class="row metric_value" >
-                <span id="gps_lon" > - </span>
-                <span class="units">mm</span>  </div>
+                <span id="wind_speed" > - </span>
+                <span class="units">%</span>  </div>
         </div>
 
     </div>
 </div>
 <div class="navbar fixed-bottom bg-light">
-    <div id="connect_button" class="button col" role="button">Kapcsolódás</div>
-    <div id="start_stop_logging_button" class="button col" role="button">Mentés</div>
+    <div id="connect_button" class="button col" role="button">Connect</div>
+    <div id="start_stop_logging_button" class="button col" role="button">Save</div>
 </div>
 
 </body>
