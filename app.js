@@ -12,9 +12,9 @@ var latitudeDisplay = document.querySelector('#gps_lat');
 
 
 // Register bluetooth data sources, connect to parsers and display elements
-registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_sint8, windSpeedDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 'temperature', blehandle_sint16, windDirectionDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 'humidity', blehandle_double, longitudeDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_fakebat, windSpeedDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 'temperature', blehandle_faketemp, windDirectionDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 'humidity', blehandle_fakedia, longitudeDisplay, '')
 
 
 // Utility functions
@@ -68,7 +68,7 @@ function blehandle_sint8(event, TargetSelector, DataLog) {
 function blehandle_sint16(event, TargetSelector, DataLog) {
   const value = event.target.value.getInt16(0, false);
   //console.log('Received: ' + value);
-  TargetSelector.textContent = String(value / 100) ;
+  //TargetSelector.textContent = String(value / 100) ;
 }
 
 function blehandle_sint32(event, TargetSelector, DataLog) {
@@ -84,3 +84,21 @@ function blehandle_double(event, TargetSelector, DataLog) {
   console.log('DouReceived: ' + value);
   TargetSelector.textContent = String(value.toFixed(6)) ;
 }
+
+function blehandle_fakebat(event, TargetSelector, DataLog) {
+  const value = 98;
+  //console.log('Int8Received: ' + value);
+  TargetSelector.textContent = String(value) ;
+} 
+
+function blehandle_faketemp(event, TargetSelector, DataLog) {
+  const value = 23;
+  //console.log('Int8Received: ' + value);
+  TargetSelector.textContent = String(value) ;
+} 
+
+function blehandle_fakedia(event, TargetSelector, DataLog) {
+  const value = 599.25;
+  //console.log('Int8Received: ' + value);
+  TargetSelector.textContent = String(value) ;
+} 
