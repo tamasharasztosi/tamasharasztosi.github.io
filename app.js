@@ -13,7 +13,7 @@ var latitudeDisplay = document.querySelector('#gps_lat');
 
 // Register bluetooth data sources, connect to parsers and display elements
 registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_sint8, windSpeedDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 1112, blehandle_double, windDirectionDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 181A, 2A6E, blehandle_double, windDirectionDisplay, '')
 
 
 // Utility functions
@@ -60,7 +60,7 @@ ConnectSourceButton.addEventListener('click', function() {
 // Bluetooth data handlers - these could be split up into more modular sub-capabilities
 function blehandle_sint8(event, TargetSelector, DataLog) {
   const value = event.target.value.getInt8(0, false);
-  console.log('Int8Received: ' + value);
+  //console.log('Int8Received: ' + value);
   TargetSelector.textContent = String(value) ;
 }
 
