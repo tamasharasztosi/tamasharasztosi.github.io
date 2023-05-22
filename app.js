@@ -59,9 +59,9 @@ ConnectSourceButton.addEventListener('click', function() {
 
 // Bluetooth data handlers - these could be split up into more modular sub-capabilities
 function blehandle_sint8(event, TargetSelector, DataLog) {
-  const value = event.target.value.getuInt8(0);
+  const value = event.target.value.getuInt8(0) * 100;
   //console.log('Received: ' + value);
-  TargetSelector.textContent = String(value * 100) ;
+  //TargetSelector.textContent = String(value * 100) ;
 }
 
 function blehandle_sint16(event, TargetSelector, DataLog) {
