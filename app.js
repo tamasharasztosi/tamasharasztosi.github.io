@@ -81,7 +81,7 @@ function blehandle_sint32(event, TargetSelector, DataLog) {
 
 function blehandle_double(event, TargetSelector, DataLog) {
   //console.log(event.target.value.byteLength)
-  const value = event.target.value.getFloat32(0, false);
+  const value = event.target.value.getFloat32(0, littleEndian);
   console.log('DouReceived: ' + value);
   TargetSelector.textContent = String(Math.floor(value * 100) / 100);
 }
