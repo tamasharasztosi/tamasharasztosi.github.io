@@ -45,7 +45,8 @@ function connectBlueToothCharacteristic(BluetoothDevice, BluetoothServiceUUID, B
 ConnectSourceButton.addEventListener('click', function() {
   console.log('Requesting Bluetooth Service...')
   navigator.bluetooth.requestDevice({
-    filters: [{services: ['battery_service']}]
+    filters: [{services: ['battery_service']}],
+    optionalServices: ['battery_service', 'generic_access', 'environmental_sensing']
   })
   .then(device => {
     BluetoothDataSources.forEach(source => {
