@@ -13,8 +13,8 @@ var latitudeDisplay = document.querySelector('#gps_lat');
 
 // Register bluetooth data sources, connect to parsers and display elements
 registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_sint8, windSpeedDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1111, blehandle_sint8, windDirectionDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1112, blehandle_sint8, longitudeDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1111, blehandle_sint16, windDirectionDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, 'environmental_sensing', 0x1112, blehandle_double, longitudeDisplay, '')
 
 
 // Utility functions
@@ -62,20 +62,20 @@ ConnectSourceButton.addEventListener('click', function() {
 // Bluetooth data handlers - these could be split up into more modular sub-capabilities
 function blehandle_sint8(event, TargetSelector, DataLog) {
   const value = event.target.value.getInt8(0, false);
-  //console.log('Int8Received: ' + value);
+  //console.log('ReceivedInt8: ' + value);
   TargetSelector.textContent = String(value) ;
 }
 
 function blehandle_sint16(event, TargetSelector, DataLog) {
   const value = event.target.value.getInt16(0, false);
-  //console.log('Received: ' + value);
+  console.log('ReceivedInt16: ' + value);
   //TargetSelector.textContent = String(value / 100) ;
 }
 
 function blehandle_sint32(event, TargetSelector, DataLog) {
   console.log(event.target.value.byteLength)
   const value = event.target.value.getInt32(0, false);
-  //console.log('Received: ' + value);
+  //console.log('ReceivedInt32: ' + value);
   TargetSelector.textContent = String(value / 1000) ;
 }
 
