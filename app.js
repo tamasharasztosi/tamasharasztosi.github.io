@@ -68,7 +68,7 @@ function blehandle_sint8(event, TargetSelector, DataLog) {
 
 function blehandle_sint16(event, TargetSelector, DataLog) {
   const value = event.target.value.getInt16(0, false);
-  console.log('ReceivedInt16: ' + value);
+  //console.log('ReceivedInt16: ' + value);
   //TargetSelector.textContent = String(value / 100) ;
 }
 
@@ -81,7 +81,7 @@ function blehandle_sint32(event, TargetSelector, DataLog) {
 
 function blehandle_double(event, TargetSelector, DataLog) {
   console.log(event.target.value.byteLength)
-  const value = event.target.value.getFloat64(0, false);
+  const value = event.target.value.getFloat32(0, false);
   console.log('DouReceived: ' + value);
   TargetSelector.textContent = String(value.toFixed(6)) ;
 }
