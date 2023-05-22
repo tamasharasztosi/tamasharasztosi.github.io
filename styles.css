@@ -5,7 +5,7 @@ body {
 .nav-bar {
   height: 60px;
   width: 100%;
-  background-color: lightsteelblue;
+  background-color: #26466D;
   color: #FFFFFF;
   padding: 10px;
   text-align: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .button {
-  background-color: #EA4C89;
+  background-color: #26466D;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
