@@ -63,7 +63,7 @@ ConnectSourceButton.addEventListener('click', function() {
 function blehandle_sint8(event, TargetSelector, DataLog) {
   const value = event.target.value.getInt8(0, false);
   //console.log('ReceivedInt8: ' + value);
-  TargetSelector.textContent = String(value) ;
+  TargetSelector.textContent = String(value);
 }
 
 function blehandle_sint16(event, TargetSelector, DataLog) {
