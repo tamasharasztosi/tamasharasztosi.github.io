@@ -13,7 +13,7 @@ var latitudeDisplay = document.querySelector('#gps_lat');
 
 // Register bluetooth data sources, connect to parsers and display elements
 registerBluetoothDataSource(BluetoothDataSources, 'battery_service', 'battery_level', blehandle_sint8, windSpeedDisplay, '')
-registerBluetoothDataSource(BluetoothDataSources, 181A, 2A6E, blehandle_double, windDirectionDisplay, '')
+registerBluetoothDataSource(BluetoothDataSources, '181A', '2A6E', blehandle_double, windDirectionDisplay, '')
 
 
 // Utility functions
