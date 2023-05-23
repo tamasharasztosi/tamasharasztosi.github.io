@@ -83,5 +83,5 @@ function blehandle_double(event, TargetSelector, DataLog) {
   //console.log(event.target.value.byteLength)
   const value = event.target.value.getFloat32(0, true);
   console.log('DouReceived: ' + value);
-  TargetSelector.textContent = String(Math.floor(value * 100) / 100);
+  TargetSelector.textContent = String(Math.round(value * 100) / 100);
 }
