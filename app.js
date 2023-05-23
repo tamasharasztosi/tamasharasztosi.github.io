@@ -84,7 +84,7 @@ function blehandle_double(event, TargetSelector, DataLog) {
   const value = event.target.value.getFloat32(0, true);
   //console.log('DouReceived: ' + value);
   if (value == 0) {
-   TargetSelector.textContent = String("-");
+   TargetSelector.textContent = String("NA");
   } else {
   TargetSelector.textContent = String(Math.round(value * 100) / 100);
   }
